@@ -24,12 +24,13 @@ def get_image_description(image_path, vision_api_url, vision_api_key):
 def get_best_tags(predictions):
     tags = []
     max_prob = 0.0
+    print(predictions)
     for prediction in predictions:
         if prediction['probability'] >= max_prob:
             max_prob = prediction['probability']
         
     for prediction in predictions:
-        if prediction['probability'] == max_prob:
-            tags.append(prediction['tagName'])
+        if prediction['probability'] > 0.05:
+            tags.append('"' + prediction['tagName'] + '"')
 
-    return "or".join(tags)
+    return ", ".join(tags)

@@ -60,7 +60,7 @@ if __name__ == "__main__":
     
     subscription_key = keys['text_to_speech']['subscription_key']
     transcript = ComicsTranscriptExtractor.get_transcript("Comics/the_monkey_and_the_dog.htm", keys)
-    print("Got the transcript. Now giving it the voice...")
+    print("\nGot the transcript. Now giving it the voice...")
     app = TextToSpeech(subscription_key, transcript)
     app.get_token()
     app.save_audio()

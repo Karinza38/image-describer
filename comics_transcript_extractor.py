@@ -11,7 +11,7 @@ def get_transcript(comics_file, keys_obj):
     title = get_title(comic_content_div)
     scenes = get_scenes(comic_content_div, keys_obj)
 
-    transcript = "Hi, Let's hear the story: " + title + ". " + scenes
+    transcript = "Hi, I am gonna help you read this comics story: " + title + ". Here's what will happen: For each scene, I am gonna call out what I see in the image, and rest I am gonna leave to your imagination. So, let's get started. " + scenes
     return transcript
 
 def get_title(comic_content_div):
@@ -27,7 +27,7 @@ def get_scenes(comic_content_div, keys_obj):
             image_src, 
             keys_obj['custom_vision_api']['url'],
             keys_obj['custom_vision_api']['prediction_key'])
-        image_decription = 'Scene ' + str(scene_index) + ': There is an image of "' + image_decription + '".'
+        image_decription = 'Scene ' + str(scene_index) + ': I see, ' + image_decription + '.'
 
         print(image_decription)
 
