@@ -1,20 +1,17 @@
-import image_describer as ImageDescriber
+import comics_transcript_extractor as ComicsTranscriptExtractor
 
 import os
 import requests
 import time
 from xml.etree import ElementTree
 
-try:
-    input = raw_input
-except NameError:
-    pass
+import json
 
 
 class TextToSpeech(object):
-    def __init__(self, subscription_key):
+    def __init__(self, subscription_key, transcript):
         self.subscription_key = subscription_key
-        self.tts = input("What would you like to convert to speech: ")
+        self.tts = transcript
         self.timestr = time.strftime("%Y%m%d-%H%M")
         self.access_token = None
     
@@ -58,8 +55,13 @@ class TextToSpeech(object):
 
 
 if __name__ == "__main__":
-    subscription_key = ""
-    app = TextToSpeech(subscription_key)
+    with open("keys.json", 'r') as f:
+        keys = json.load(f)
+    
+    subscription_key = keys['text_to_speech']['subscription_key']
+    transcript = ComicsTranscriptExtractor.get_transcript("Comics/the_monkey_and_the_dog.htm", keys)
+    print("Got the transcript. Now giving it the voice...")
+    app = TextToSpeech(subscription_key, transcript)
     app.get_token()
     app.save_audio()
 
