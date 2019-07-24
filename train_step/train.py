@@ -17,16 +17,16 @@ args = parser.parse_args()
 print("Argument 1: %s" % args.train_image_folder)
 print("Argument 2: %s" % args.train_image_tag)
 
-ENDPOINT = "<CUSTOM-VISION-ENDPOINT>"
-training_key = "<CUSTOM-VISION-TRAINING-KEY>"
-project_id = "<CUSTOM-VISION-PROJECT-ID>"
+ENDPOINT = "https://westus2.api.cognitive.microsoft.com"
+training_key = "<YOUR_TRAINING_KEY>"
+project_id = "<YOUR_PROJECT_ID>"
 
 trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
 tag_name = args.train_image_tag.replace('-', ' ')
 
 all_tags = trainer.get_tags(project_id)
-
 image_tag = None
+
 for tag in all_tags:
     if tag_name == tag.name:
         image_tag = tag
@@ -41,9 +41,9 @@ if args.train_image_folder:
 
     image_list = []
     
-    for file_name in os.listdir(args.train_image_folder):
+    for file_name in os.listdir(args.train_image_folder + "/" + args.train_image_tag):
         if file_name.startswith(args.train_image_tag):
-            path = os.path.join(args.train_image_folder, file_name)
+            path = os.path.join(args.train_image_folder + "/" + args.train_image_tag, file_name)
             with open(path, "rb") as image_contents:
                 image_list.append(ImageFileCreateEntry(name=file_name, contents=image_contents.read(), tag_ids=[image_tag.id]))
 
@@ -69,7 +69,7 @@ while (iteration.status != "Completed"):
 
 
 publish_iteration_name = "comic_describer"
-prediction_resource_id = "<CUSTOM-VISITION-PREDICTION-RESOURCE-ID>"
+prediction_resource_id = "<YOUR_PREDICTION_RESOURCE_ID>"
 
 # The iteration is now trained. Publish it to the project endpoint
 trainer.publish_iteration(project_id, iteration.id, publish_iteration_name, prediction_resource_id)
