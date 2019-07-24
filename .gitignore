@@ -1,2 +1,4 @@
 keys.json
 config.json
+__pycache__
+.ipynb_checkpoints
