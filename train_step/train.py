@@ -22,7 +22,7 @@ training_key = "<YOUR_TRAINING_KEY>"
 project_id = "<YOUR_PROJECT_ID>"
 
 trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
-tag_name = args.train_image_tag.replace('-', ' ')
+tag_name = args.train_image_tag.replace('_', ' ')
 
 all_tags = trainer.get_tags(project_id)
 image_tag = None
