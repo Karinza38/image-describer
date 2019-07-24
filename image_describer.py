@@ -29,7 +29,7 @@ def get_best_tags(predictions):
             max_prob = prediction['probability']
         
     for prediction in predictions:
-        if prediction['probability'] > 0.05:
+        if prediction['probability'] > 0.1:
             tags.append('a "' + prediction['tagName'] + '"')
 
     tagStr = ", ".join(tags[i] for i in range(0, len(tags) - 1))
