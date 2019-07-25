@@ -17,9 +17,9 @@ args = parser.parse_args()
 print("Argument 1: %s" % args.train_image_folder)
 print("Argument 2: %s" % args.train_image_tag)
 
-ENDPOINT = "https://westus2.api.cognitive.microsoft.com"
-training_key = "<YOUR_TRAINING_KEY>"
-project_id = "<YOUR_PROJECT_ID>"
+ENDPOINT = "https://westus2.api.cognitive.microsoft.com" # change the endpoint based on your region
+training_key = "<YOUR-TRAINING-KEY>"
+project_id = "<YOUR-PROJECT-ID>"
 
 trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
 tag_name = args.train_image_tag.replace('_', ' ')
@@ -69,7 +69,7 @@ while (iteration.status != "Completed"):
 
 
 publish_iteration_name = "comic_describer"
-prediction_resource_id = "<YOUR_PREDICTION_RESOURCE_ID>"
+prediction_resource_id = "<YOUR-PREDICTION-RESOURCE-ID>"
 
 # The iteration is now trained. Publish it to the project endpoint
 trainer.publish_iteration(project_id, iteration.id, publish_iteration_name, prediction_resource_id)

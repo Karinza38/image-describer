@@ -24,7 +24,7 @@ print("Argument 1: %s" % args.scrapper_output_folder)
 print("Argument 2: %s" % args.scrapper_image_tag)
 print("Argument 3: %s" % args.scrapper_search_term)
 
-subscription_key = "<YOUR_SUBSCRIPTION_KEY>"
+subscription_key = "<YOUR-SUBSCRIPTION-KEY>"
 search_term = args.scrapper_search_term
 
 client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
