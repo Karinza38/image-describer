@@ -1,0 +1,9 @@
+{
+    "custom_vision_api": {
+        "url": "<YOUR-PREDICTION-ENDPOINT>",
+        "prediction_key": "<YOUR-PREDICTION-KEY>"
+    },
+    "text_to_speech": {
+        "subscription_key": "<YOUR-TEXT-SPEECH-SUBSCRIPTION-KEY>"
+    }
+}
