@@ -7,7 +7,7 @@ A framework for continuous and self training of custom image classifier so that 
   - Run this [notebook](image_describer_training_pipeline.ipynb). Before running,
       - Install the required dependencies
       - If you want, you can change the step scripts with your training and scrapping logic. Learn about [Azure Machine Learning Pipelines](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
-      - The current logic uses [Custom Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) image classifier which is trained by the framework and [Bing Image Search](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/) for web scrapping.
+      - The current logic uses [Custom Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) image classifier, which is trained by the image-describer framework, and [Bing Image Search](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/), for web scrapping.
       - If you want to use the same logic, replace the required subscription keys and endpoints in the scripts of train and scrapper step.
       
  - Use the framework
