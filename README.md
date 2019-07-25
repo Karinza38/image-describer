@@ -1,5 +1,5 @@
 # Overview
-A framework to enable self training of custom image classifier so that it can describe the image appearing on digital documents such as ebooks, comics etc.
+A framework for continuous and self training of custom image classifier so that it can describe the image appearing on digital documents such as ebooks, comics etc.
 
 # How to run
 - Deploy the framework
