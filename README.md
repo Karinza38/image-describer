@@ -10,7 +10,7 @@ A framework for continuous and self training of custom image classifier so that 
       - The current logic uses [Custom Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) image classifier, which is trained by the image-describer framework, and [Bing Image Search](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/), for web scrapping.
       - If you want to use the same logic, replace the required subscription keys and endpoints in the scripts of [train](./train_step) and [scrapper](./image_scrapper_step) step.
       
- - Use the framework
+ - Train using the framework
     - You can use the framework to train your classifier using REST endpoint, through Azure Portal or by creating a schedule for self training, as shown in the later sections of this [notebook](image_describer_training_pipeline.ipynb).
     
  - Use\Test your image classifier 
