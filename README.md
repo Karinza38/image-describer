@@ -6,7 +6,7 @@ A framework for continuous and self-training(without training dataset) of custom
   - Setup an [Azure Machine Learning workspace](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-manage-workspace)
   - Run this [notebook](image_describer_training_pipeline.ipynb). Before running,
       - Install the required dependencies
-      - Download the `config.json` of your `AML Workspace`to the root. It is needed for the authorization. 
+      - Download the `config.json` of your `AML Workspace`to the root. It is needed for the authorization of your AML workspace. 
       - If you want, you can change the step scripts with your training and scrapping logic. Learn about [Azure Machine Learning Pipelines](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
       - The current logic uses [Custom Vision API](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) image classifier, which is trained by the image-describer framework, and [Bing Image Search](https://azure.microsoft.com/en-us/services/cognitive-services/bing-image-search-api/), for web scrapping.
       - If you want to use the same logic, replace the required subscription keys and endpoints in the scripts of [train](./train_step) and [scrapper](./image_scrapper_step) step.
