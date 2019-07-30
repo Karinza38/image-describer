@@ -5,7 +5,7 @@ A framework for continuous and self-training(without training dataset) of custom
 - Deploy the framework
   - Setup an [Azure Machine Learning workspace](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-manage-workspace)
   - Run this [notebook](image_describer_training_pipeline.ipynb). Before running,
-      - Configure [Azure Machine Learning environment](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-environment).
+      - Configure [Azure Machine Learning Development Environment](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-environment).
       - Install the required dependencies
       - Download the `config.json` of your `AML Workspace`to the root. It is needed for the authorization of your AML workspace. 
       - If you want, you can change the step scripts with your training and scrapping logic. Learn about [Azure Machine Learning Pipelines](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/machine-learning-pipelines)
