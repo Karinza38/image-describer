@@ -1,4 +1,4 @@
-# Overview
+Overview
 A framework for continuous and self-training(without training dataset) of custom image classifier so that it can describe the image appearing on digital documents such as ebooks, comics etc.
 
 # How to run
